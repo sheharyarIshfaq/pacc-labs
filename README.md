@@ -22,8 +22,20 @@ notes and measurements.
 
 ## The machine
 
-Dalek's compute partitions. The front node shares its home directory with all
-of them over NFS, so one build runs everywhere.
+[Dalek](https://dalek.proj.lip6.fr) is built from consumer hardware rather than
+server parts: mini-PCs, laptop SoCs and gaming GPUs, 16 compute nodes plus a
+front node, wired with 2.5 GbE. The point is to get cheap access to recent
+architectures, including hybrid CPUs with performance and efficiency cores, and
+to study energy use on them. The project was funded by the Agence Innovation
+Défense and has a paper on HAL and arXiv.
+
+Every node carries a custom board (Node-Conso Modular) that measures power
+between the PSU and the components, 1000 to 4000 samples per second, with CPU,
+GPU and motherboard read separately. So the consumption figures come from the
+hardware and not from a software estimate.
+
+The four compute partitions, all sharing the front node's home directory over
+NFS, so one build runs everywhere:
 
 | partition | CPU | GPU |
 |---|---|---|
@@ -31,3 +43,7 @@ of them over NFS, so one build runs everywhere.
 | az4-a7900 | AMD Ryzen 9 7945HX (16x Zen 4) | AMD RX 7900 XTX |
 | iml-ia770 | Intel Core Ultra 9 185H | Intel Arc A770 |
 | az5-a890m | AMD Ryzen AI 9 HX 370 (Zen 5) | Radeon 890M |
+
+Nodes suspend themselves after 10 minutes with no job on them and are woken by
+SLURM through Wake-on-LAN, which is why a pending job often means a machine is
+still booting.
