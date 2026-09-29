@@ -1,12 +1,14 @@
 # PACC labs
 
 My lab work for UM5IN160, Parallelism and Accelerators for Cluster Computing,
-M2 SESI at Sorbonne Université (2026-2027), taught by Adrien Cassagne.
+M2 SESI at Sorbonne Université (2026-2027), taught by
+[Adrien Cassagne](https://www.lip6.fr/actualite/personnes-fiche.php?ident=P1521).
 
 The course goes from single-core CPU optimisation and SIMD to multithreading,
 GPU programming with CUDA and OpenCL, and MPI across nodes. Everything is
 measured on [Dalek](https://dalek.proj.lip6.fr), a cluster at LIP6 assembled
-from mini-PC nodes with AMD, Intel and Nvidia hardware.
+from mini-PC nodes with AMD, Intel and Nvidia hardware. The cluster was built
+at LIP6 by Adrien Cassagne, Noé Amiot and Manuel Bouyer.
 
 The labs use [EasyPAP](https://gforgeron.gitlab.io/easypap), a C framework for
 parallelising computations on 2D grids. The framework and the lab skeletons

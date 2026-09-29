@@ -4,7 +4,9 @@ Optimising a 3x3 blur filter by hand and measuring every step on Dalek. The
 kernel replaces each pixel with the average of itself and its 8 neighbours,
 over a 1024x1024 image, repeated 100 times.
 
-Only [`blur.c`](blur.c) is mine. It plugs into the EasyPAP framework.
+Only [`blur.c`](blur.c) is mine. It plugs into the EasyPAP framework, and the
+lab subject is by
+[Adrien Cassagne](https://www.lip6.fr/actualite/personnes-fiche.php?ident=P1521).
 
 ## How it was measured
 
